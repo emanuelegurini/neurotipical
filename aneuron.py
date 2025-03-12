@@ -1,5 +1,5 @@
 j = [1, 2, 3] # input
-w = [2, 3, 4] # weight
+w = [-2, -3, -4] # weight
 b = 1
 
 def cni(j, w, b): # cni stands for compute_neuron_input
@@ -17,6 +17,6 @@ def cni(j, w, b): # cni stands for compute_neuron_input
 	for i in range(jblen):
 		acc = acc + (j_with_bias[i] * w_with_bias[i])
 
-	return acc
+	return max(0, acc)
 
 print(cni(j, w, b))
